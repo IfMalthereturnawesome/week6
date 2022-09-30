@@ -1,0 +1,58 @@
+<template id="btn4-template">
+  <h2>Get all Cars</h2>
+  <button id="btn-get-all" class="btn">Get All Cars</button>
+  <table class="table">
+    <thead>
+      <tr class="thRow">
+        <th>Id</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Price Pr Day</th>
+        <th>Best Discount</th>
+      </tr>
+    </thead>
+    <tbody id="tbody-all"></tbody>
+  </table>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+     
+          <div id="car-content">
+            <p id="id"></p>
+            <p id="brand"></p>
+            <p id="model"></p>
+            <p id="pricePrDay"></p>
+            <p id="bestDiscount"></p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

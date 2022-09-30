@@ -1,0 +1,38 @@
+<template id="btn2-template">
+  <h1>Edit a Car</h1>
+ <input id="text-for-id" placeholder="id" />
+  <button id="findEdit">Find item to edit</button>
+  <form >
+
+  <table class="table">
+    <thead>
+      <tr class="thRow">
+        <th>Id</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Price Pr Day</th>
+        <th>Best Discount</th>
+      </tr>
+    </thead>
+    <tbody id="tbody-all">
+      <tr>
+        <td id="id"></td>
+        <td id="brand" >
+          <input id="inputfield5" type="text" >
+        </td>
+        <td id="model"><input id="inputfield6" type="text"></td>
+        <td id="pricePrDay">
+          <input id="inputfield7" type="number">
+        </td>
+        <td id="bestDiscount">
+          <input id="inputfield8" type="number">
+        </td>
+      </tr>
+      <p id="error" style="color: red"></p>
+    </tbody>
+  </table>
+  <button id="submitEdit">Submit edited item</button>
+  </form>
+  
+  
+</template>
