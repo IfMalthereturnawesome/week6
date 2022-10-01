@@ -44,9 +44,9 @@ window.addEventListener("load", async () => {
         renderTemplate(templateAddCar, "content");
         initAddCar(router);
       },
-      "/edit-car": (match) => {
+      "/edit-car": (match,router) => {
         renderTemplate(templateEditCar, "content");
-        initEditCar(match);
+        initEditCar(match,router);
       },
       "/single-car": (match) => {
         renderTemplate(templateSingleCar, "content");

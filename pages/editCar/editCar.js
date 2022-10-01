@@ -4,22 +4,19 @@ import { encode } from "../../utils.js";
 let router;
 let car = [];
 
-export async function initEditCar(match) {
+export function initEditCar(match, navigoRouter) {
   document.getElementById("findEdit").onclick = fetchCarData;
   const submitEdit = document.getElementById("submitEdit");
   const getEdit = document.getElementById("text-for-id");
-         router = match.router;
+  router = navigoRouter;
   submitEdit.addEventListener("click", (e) => {
     e.preventDefault();
     editCar(getEdit.value);
-    
-
   });
   if (match?.params?.id) {
     const id = match.params.id;
 
     try {
-
       findEdit(id);
     } catch (error) {
       document.getElementById("error").innerHTML = "Could not find Car: " + id;
@@ -64,9 +61,6 @@ async function findEdit(id) {
   }
 }
 
-// Create an eventListener for submitEdit button
-
-// make a defer function for editing the car with a put request and navigate to the single-car page
 async function editCar(id) {
   const brand = document.getElementById("inputfield5").value;
   const model = document.getElementById("inputfield6").value;
@@ -89,13 +83,14 @@ async function editCar(id) {
     body: JSON.stringify(updatedCar),
   };
 
-  const response = await fetch(url + id, options)
-  const data = await response.json()
-  console.log(data)
-  // defer navigate to the single-car page after submit
-  
+  // navigate to single-car page after submit
 
-
+  const response = await fetch(url + id, options);
+  const data = await response.json();
+  let sucess = (document.getElementById("edited").innerText = "Car edited");
+  // reload page after submit
+  setTimeout(function () {
+    location.reload();
+  }, 1000);
+  console.log(data);
 }
-
-
