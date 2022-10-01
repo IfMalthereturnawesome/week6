@@ -7,6 +7,7 @@ let router;
 export function initShowAllCars(navigoRouter) {
   document.getElementById("btn-get-all").onclick = getAllCars;
   document.getElementById("tbody-all").onclick = showCarDetails;
+  document.getElementById("deleteCar").onclick = deleteCar;
   getAllCars();
   router = navigoRouter;
 }
@@ -62,4 +63,24 @@ async function showCarDetails(evt) {
 
   }
 
+}
+
+// Function for deleting a car
+async function deleteCar(id) {
+   id = document.getElementById("id").innerText;
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  try {
+    const response = await fetch(url + '/car/' + id, options);
+    const json = await response.json();
+    console.log("Deleted car with id: " + id);
+    console.log(json);
+    getAllCars();
+  } catch (error) {
+    console.log(error);
+  }
 }
